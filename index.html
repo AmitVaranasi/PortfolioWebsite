@@ -100,7 +100,7 @@
     </header>
 
     <main>
-        <section id="home" class="min-h-screen flex items-center bg-gray-900">
+        <section id="home" class="min-h-screen pt-24 flex items-center bg-gray-900">
             <div class="container mx-auto px-6">
                 <div class="flex flex-col md:flex-row items-center justify-center gap-12">
                     <div class="flex-shrink-0">
@@ -113,8 +113,9 @@
                         <p id="typing-subtitle" class="mt-4 text-xl md:text-2xl font-medium text-gradient min-h-[36px] md:min-h-[36px]">
                             &nbsp;
                         </p>
-                        <p class="mt-6 mx-auto md:mx-0 max-w-3xl text-lg text-gray-400">
-                            I build intelligent, high-impact applications by bridging the gap between cutting-edge machine learning and robust software engineering. Currently pursuing my Master's in Computer Science at the University of Illinois at Chicago.
+                        <p class="mt-6 mx-auto md:mx-0 max-w-3xl text-lg text-gray-400 text-justify">
+                            I'm passionate about building intelligent systems that solve real problems—from optimizing trading workflows to creating AI experiences that run seamlessly in real-time. With experience spanning full-stack development, machine learning, and data science, I love tackling challenges where clean code meets cutting-edge AI.
+Currently pursuing my MS in Computer Science while exploring the intersection of multi-modal AI, computer vision, and practical applications that make a difference.    
                         </p>
                         <div class="mt-10 flex justify-center md:justify-start items-center space-x-6">
                             <a href="mailto:amitmaheshwarvaranasi@gmail.com" class="text-gray-400 hover:text-white transition-colors">
@@ -144,10 +145,10 @@
                     <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-400">My professional experience in building impactful software.</p>
                 </div>
                 <div class="relative max-w-3xl mx-auto">
-                    <div class="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gray-700"></div>
+                    <div class="absolute left-5 md:left-1/2 transform md:-translate-x-1/2 h-full w-0.5 bg-gray-700"></div>
                     
-                    <div class="relative mb-12">
-                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sky-400 rounded-full mt-1.5"></div>
+                    <div class="relative mb-12 pl-12 md:pl-0">
+                        <div class="absolute left-5 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sky-400 rounded-full mt-1.5"></div>
                         <div class="md:grid md:grid-cols-2 md:gap-8">
                             <div class="md:text-right md:pr-8 mb-4 md:mb-0">
                                 <h3 class="text-xl font-bold text-white">Bank Of America</h3>
@@ -165,8 +166,8 @@
                         </div>
                     </div>
 
-                    <div class="relative">
-                        <div class="absolute left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sky-400 rounded-full mt-1.5"></div>
+                    <div class="relative pl-12 md:pl-0">
+                        <div class="absolute left-5 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-sky-400 rounded-full mt-1.5"></div>
                         <div class="md:grid md:grid-cols-2 md:gap-8">
                             <div class="md:order-2 md:text-left md:pl-8 mb-4 md:mb-0">
                                 <h3 class="text-xl font-bold text-white">Reliance Jio</h3>
@@ -459,10 +460,22 @@
             });
             
             // --- New Canvas Logic ---
+            // NOTE: The original script tag was incomplete. Assuming you might want this functionality.
+            // If you don't have a button with id="download-as-image", this part won't do anything.
             const downloadImageButton = document.getElementById('download-as-image');
-            downloadImageButton.addEventListener('click', () => {
-                html2canvas(document.body).then(canvas => {
-                    // Create a temporary link element
-                    const link = document.createElement('a');
-                    link.download = 'amit_maheshwar_resume.png';
-                    link.href = canvas.toD…
+            if(downloadImageButton) {
+                downloadImageButton.addEventListener('click', () => {
+                    html2canvas(document.body).then(canvas => {
+                        // Create a temporary link element
+                        const link = document.createElement('a');
+                        link.download = 'amit_maheshwar_varanasi_portfolio.png';
+                        link.href = canvas.toDataURL();
+                        link.click();
+                    });
+                });
+            }
+        });
+    </script>
+
+</body>
+</html>
